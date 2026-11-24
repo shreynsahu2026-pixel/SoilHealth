@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SoilHealth Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <h1>SoilHealth</h1>
+            <p>Soil Monitoring and Analysis System</p>
+        </div>
+
+        <div class="connection">
+            <span id="connectionStatus">Connecting...</span>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <div>
+                <h2>Soil Analysis Dashboard</h2>
+                <p>Overview of soil parameters and analysis results.</p>
+            </div>
+
+            <button onclick="loadSoilData()">Refresh Data</button>
+        </section>
+
+        <!-- Soil Parameters -->
+
+        <section>
+            <h2>Soil Parameters</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <h3>Average pH</h3>
+                    <p id="ph">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Organic Carbon</h3>
+                    <p id="oc">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Electrical Conductivity</h3>
+                    <p id="ec">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Sodium (Na)</h3>
+                    <p id="na">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Potassium (K)</h3>
+                    <p id="k">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Calcium (Ca)</h3>
+                    <p id="ca">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Magnesium (Mg)</h3>
+                    <p id="mg">--</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Overall Analysis -->
+
+        <section>
+            <h2>Overall Soil Analysis</h2>
+
+            <div class="grid">
+
+                <div class="card highlight">
+                    <h3>Overall Soil Condition</h3>
+                    <p id="condition">--</p>
+                </div>
+
+                <div class="card highlight">
+                    <h3>Organic Carbon Status</h3>
+                    <p id="organic">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Minimum pH</h3>
+                    <p id="minPH">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Maximum pH</h3>
+                    <p id="maxPH">--</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Soil Horizons</h3>
+                    <p id="count">--</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Depth-wise Analysis -->
+
+        <section>
+            <h2>Depth-wise Soil Analysis</h2>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horizon</th>
+                            <th>Depth (cm)</th>
+                            <th>pH</th>
+                            <th>Organic Carbon</th>
+                            <th>EC</th>
+                            <th>Na</th>
+                            <th>K</th>
+                            <th>Ca</th>
+                            <th>Mg</th>
+                            <th>pH Condition</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="soilTable">
+                        <tr>
+                            <td colspan="10">Waiting for Java data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>SoilHealth | SENSOR SOIL ANALYSIS</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

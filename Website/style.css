@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f6ef;
+    color: #26382b;
+}
+
+/* Header */
+
+header {
+    background-color: #204b32;
+    color: white;
+    padding: 25px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+header p {
+    color: #c5d7c7;
+}
+
+.connection {
+    background-color: #ffffff20;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Main content */
+
+main {
+    padding: 35px 50px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.welcome h2 {
+    font-size: 27px;
+    color: #204b32;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #788579;
+}
+
+/* Refresh button */
+
+button {
+    background-color: #28613c;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #19472b;
+}
+
+/* Section headings */
+
+section h2 {
+    color: #294b35;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+/* Cards */
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.card {
+    background-color: white;
+    width: 210px;
+    min-height: 125px;
+    padding: 22px;
+
+    border-radius: 12px;
+    border: 1px solid #e1e9df;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.card h3 {
+    color: #718071;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.card p {
+    color: #245c35;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: #e4eee2;
+    border: 1px solid #d1e1ce;
+}
+
+/* Table */
+
+.table-container {
+    background-color: white;
+    border-radius: 12px;
+    overflow-x: auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 950px;
+}
+
+th {
+    background-color: #204b32;
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-size: 13px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #e8eee6;
+    font-size: 14px;
+}
+
+tr:hover {
+    background-color: #f3f7f1;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    color: #829082;
+    padding: 25px;
+    font-size: 13px;
+}
+
+/* Mobile layout */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 22px;
+    }
+
+    main {
+        padding: 25px 20px;
+    }
+
+    .welcome {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
