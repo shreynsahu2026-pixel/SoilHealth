@@ -1,0 +1,221 @@
+/* General styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f6ef;
+    color: #26382b;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Main container */
+
+.login-container {
+    display: flex;
+    width: 950px;
+    min-height: 570px;
+    background-color: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Left branding section */
+
+.brand-section {
+    width: 45%;
+    background-color: #204b32;
+    color: white;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.brand h1 span {
+    color: #a8cf91;
+}
+
+.brand p {
+    color: #c5d7c7;
+    font-size: 14px;
+}
+
+.brand-message h2 {
+    font-size: 35px;
+    line-height: 1.3;
+    margin-bottom: 18px;
+}
+
+.brand-message p {
+    color: #c5d7c7;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 300px;
+}
+
+.brand-footer {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a9c5ae;
+}
+
+
+/* Right form section */
+
+.form-section {
+    width: 55%;
+    padding: 55px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-content h2 {
+    font-size: 29px;
+    color: #204b32;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #829082;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+
+/* Input fields */
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #405345;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dce5da;
+    border-radius: 7px;
+    outline: none;
+    font-size: 14px;
+    background-color: #fafcf9;
+}
+
+.input-group input:focus {
+    border-color: #28613c;
+    box-shadow: 0 0 0 3px rgba(40, 97, 60, 0.1);
+}
+
+
+/* Password label */
+
+.password-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.password-label a {
+    font-size: 12px;
+    color: #28613c;
+    text-decoration: none;
+}
+
+
+/* Sign in button */
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #28613c;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #19472b;
+}
+
+
+/* Signup link */
+
+.signup-text {
+    text-align: center;
+    font-size: 13px;
+    color: #829082;
+    margin-top: 30px;
+}
+
+.signup-text a {
+    color: #28613c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+/* Footer */
+
+.form-footer {
+    color: #9aa69a;
+    font-size: 11px;
+    text-align: center;
+}
+
+
+/* Mobile responsiveness */
+
+@media (max-width: 750px) {
+
+    .login-container {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .brand-section {
+        width: 100%;
+        min-height: 250px;
+        padding: 30px;
+    }
+
+    .brand-message {
+        margin-top: 40px;
+    }
+
+    .brand-footer {
+        margin-top: 30px;
+    }
+
+    .form-section {
+        width: 100%;
+        padding: 35px 25px;
+        gap: 40px;
+    }
+}

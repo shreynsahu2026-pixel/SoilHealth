@@ -40,3 +40,12 @@ VALUES
 ('B11t', '19-70', 0.60, 7.3, 0.021, 0.26, 0.26, 16, 6),
 ('B12t', '70-140', 0.60, 7.1, 0.020, 0.23, 0.22, 17, 8);
 SELECT * FROM gangotali_series;
+
+USE soil_data;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
