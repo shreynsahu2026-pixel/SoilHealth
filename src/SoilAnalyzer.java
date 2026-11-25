@@ -458,6 +458,79 @@ public class SoilAnalyzer extends SoilAnalysis {
                 }
 
             });
+
+            server.createContext("/api/login", exchange -> {
+
+                    exchange.getResponseHeaders().add(
+                        "Access-Control-Allow-Origin", "*"
+                    );
+                    exchange.getResponseHeaders().add(
+                        "Access-Control-Allow-Methods", "POST, OPTIONS"
+                    );
+                    exchange.getResponseHeaders().add(
+                        "Access-Control-Allow-Headers", "Content-Type"
+                    );
+
+                    if (exchange.getRequestMethod().equals("OPTIONS")) {
+                        exchange.sendResponseHeaders(204, -1);
+                        exchange.close();
+                        return;
+                    }
+
+                    if (!exchange.getRequestMethod().equals("POST")) {
+                        sendResponse(exchange, 405,
+                            "{\"message\":\"Method not allowed.\"}");
+                        exchange.close();
+                        return;
+                    }
+
+                    try {
+                        String body = new String(
+                            exchange.getRequestBody().readAllBytes(),
+                            StandardCharsets.UTF_8
+                        );
+
+                        Map<String, String> fields = new HashMap<>();
+
+                        for (String pair : body.split("&")) {
+                            String[] parts = pair.split("=", 2);
+
+                            if (parts.length == 2) {
+                                fields.put(
+                                    URLDecoder.decode(parts[0], "UTF-8"),
+                                    URLDecoder.decode(parts[1], "UTF-8")
+                                );
+                            }
+                        }
+
+                        String email = fields.get("email");
+                        String password = fields.get("password");
+
+                        if (email == null || password == null
+                                || email.isBlank() || password.isBlank()) {
+                            sendResponse(exchange, 400,
+                                "{\"message\":\"Email and password are required.\"}");
+                            return;
+                        }
+
+                        boolean valid = Auth.login(email, password);
+
+                        if (valid) {
+                            sendResponse(exchange, 200,
+                                "{\"message\":\"Login successful!\"}");
+                        } else {
+                            sendResponse(exchange, 401,
+                                "{\"message\":\"Invalid email or password.\"}");
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        sendResponse(exchange, 500,
+                            "{\"message\":\"Login failed.\"}");
+                    } finally {
+                        exchange.close();
+                    }
+                });
                                 
             server.createContext("/api/soil", exchange -> {
 
